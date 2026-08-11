@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Torneio de Verão UDV 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-top">
+      <img class="brand-logo" src="assets/torneio-verao-logo.png" alt="Torneio de Verão UDV">
+      <div>
+        <p class="club">UNI&Atilde;O DESPORTIVA DE VILA CH&Atilde;</p>
+        <h1><span>Torneio</span><small>de ver&atilde;o</small></h1>
+      </div>
+    </div>
+    <nav class="tabs" aria-label="Navega&ccedil;&atilde;o principal">
+      <a href="#jogos">Jogos</a><a href="#classificacoes">Classifica&ccedil;&otilde;es</a><a href="#marcadores">Marcadores</a><a href="#fase-final">Fase final</a><a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="ticker" id="proximos"></section>
+
+    <section class="panel" id="jogos">
+      <div class="section-title"><span class="icon">&#128197;</span><h2>Calend&aacute;rio e resultados</h2></div>
+      <div class="filters"><button data-filter="all" class="active">Todos</button><button data-filter="A">Grupo A</button><button data-filter="B">Grupo B</button><button data-filter="F">Feminino</button><button data-filter="2">2.&ordf; Fase</button></div>
+      <div id="matches" class="match-list"></div>
+    </section>
+
+    <section class="panel" id="classificacoes">
+      <div class="section-title"><span class="icon">&#127942;</span><h2>Classifica&ccedil;&otilde;es</h2></div>
+      <div class="standings-grid"><div><h3>Grupo A</h3><div id="standingsA"></div></div><div><h3>Grupo B</h3><div id="standingsB"></div></div><div><h3>Feminino</h3><div id="standingsF"></div></div></div>
+      <p class="hint">Crit&eacute;rios: pontos, diferen&ccedil;a de golos, golos marcados e nome da equipa.</p>
+    </section>
+
+    <section class="panel" id="marcadores">
+      <div class="section-title"><span class="icon">&#9917;</span><h2>Melhores marcadores</h2></div>
+      <div id="scorers"></div>
+    </section>
+
+    <section class="panel" id="fase-final">
+      <div class="section-title"><span class="icon">&#128081;</span><h2>Fase final</h2></div>
+      <div id="finals" class="finals-grid"></div>
+    </section>
+  </main>
+
+  <footer>UDV &bull; Torneio de Ver&atilde;o 2026 &bull; App gratuita em HTML</footer>
+  <script src="js/config.js"></script><script src="js/data.js"></script><script src="js/app.js"></script>
+</body>
+</html>

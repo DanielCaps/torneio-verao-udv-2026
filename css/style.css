@@ -1,0 +1,198 @@
+:root{--bg:#f7f7f5;--ink:#050505;--muted:#6f7979;--teal:#356f70;--teal2:#224f50;--line:#b8cece;--white:#fff;--shadow:0 18px 45px rgba(0,0,0,.1);--radius:24px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 0 0,rgba(53,111,112,.11),transparent 34%),radial-gradient(circle at 100% 20%,rgba(0,0,0,.06),transparent 25%),var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink)}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(125deg,transparent 0 45%,rgba(255,255,255,.55) 45% 47%,transparent 47% 100%);opacity:.75}.hero{max-width:1100px;margin:28px auto 18px;padding:26px;border-radius:32px;background:rgba(255,255,255,.85);box-shadow:var(--shadow);border:1px solid rgba(53,111,112,.15);position:relative;overflow:hidden}.hero:after{content:"\2605   \26bd   \2661";position:absolute;right:22px;bottom:8px;font-size:58px;font-weight:900;letter-spacing:12px;opacity:.08;transform:rotate(-8deg)}.hero-top{display:flex;align-items:center;gap:22px}.crest-mini{width:76px;height:76px;border:4px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-family:Montserrat,sans-serif;font-size:24px;background:repeating-linear-gradient(45deg,#fff 0 8px,#e8eeee 8px 16px)}.club{margin:0;font-weight:900;letter-spacing:.04em;font-size:clamp(20px,3vw,38px)}h1{margin:8px 0 0;line-height:.85}h1 span{font-family:Montserrat,sans-serif;text-transform:uppercase;font-size:clamp(56px,13vw,120px);letter-spacing:-.04em;color:#111;text-shadow:none;-webkit-text-stroke:0}h1 small{display:block;font-family:Montserrat,sans-serif;font-size:clamp(24px,5vw,52px);color:var(--teal);letter-spacing:0;font-weight:700}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.tabs a,.filters button{border:0;background:var(--ink);color:#fff;text-decoration:none;padding:12px 16px;border-radius:999px;font-weight:900;cursor:pointer}.tabs a:hover,.filters button.active,.filters button:hover{background:var(--teal)}main{max-width:1100px;margin:0 auto 60px;padding:0 12px}.ticker{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}.next-card,.match,.panel{background:rgba(255,255,255,.92);border:1px solid rgba(53,111,112,.22);box-shadow:0 8px 26px rgba(0,0,0,.06)}.next-card{border-radius:22px;padding:16px}.next-card .time{font-family:Montserrat;font-size:32px;color:var(--teal)}.panel{border-radius:var(--radius);padding:22px;margin:18px 0}.section-title{display:flex;align-items:center;gap:12px;border-bottom:5px solid var(--ink);margin-bottom:18px}.section-title h2{font-family:Montserrat;margin:0 0 8px;font-size:36px;text-transform:uppercase}.icon{font-size:30px}.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:17px}.match-list{display:grid;gap:12px}.day-title{font-family:Montserrat;font-size:28px;color:var(--teal);margin:22px 0 4px;text-transform:uppercase}.match{border-radius:18px;display:grid;grid-template-columns:84px 1fr auto;gap:14px;align-items:center;padding:14px}.match .time{font-family:Montserrat;font-size:26px}.teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;font-weight:900;font-size:18px}.teams .home{text-align:right}.teams .score{min-width:72px;text-align:center;background:#000;color:#fff;border-radius:12px;padding:8px}.meta{color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase}.standings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.table-wrap{overflow:auto;border-radius:18px;border:1px solid var(--line)}table{width:100%;border-collapse:collapse;background:#fff}th{background:linear-gradient(0deg,var(--ink),#111);color:#fff;text-align:left}th,td{padding:11px;border-bottom:1px solid #d9e5e5;white-space:nowrap}td.num{text-align:center;font-weight:900}.hint{color:var(--muted);font-weight:700}.scorer-row{display:grid;grid-template-columns:42px 1fr 70px;gap:10px;padding:13px;border-bottom:1px solid #dde7e7;background:#fff}.scorer-row:first-child{border-radius:18px 18px 0 0}.scorer-row:last-child{border-radius:0 0 18px 18px}.rank{font-family:Montserrat;color:var(--teal);font-size:26px}.finals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px}.final-card{border:3px solid var(--ink);border-radius:22px;padding:16px;background:linear-gradient(180deg,#fff,#eff7f7)}.final-card strong{display:block;font-family:Montserrat;font-size:28px}.admin-hero h1 span{font-size:clamp(42px,10vw,100px)}form{display:grid;gap:16px}label{font-weight:900}input,select,textarea{width:100%;padding:13px;border:2px solid var(--line);border-radius:14px;font:inherit;margin-top:6px;background:#fff}textarea{min-height:130px}.score-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.primary{background:var(--teal);color:#fff;border:0;border-radius:18px;font-weight:900;font-size:18px;padding:15px;cursor:pointer}.status{font-weight:900;margin-top:14px}footer{text-align:center;font-weight:900;color:#627;padding:30px}@media(max-width:720px){.hero{margin:10px;border-radius:22px;padding:18px}.hero-top{align-items:flex-start}.crest-mini{width:58px;height:58px;font-size:18px}.match{grid-template-columns:1fr}.teams{grid-template-columns:1fr;gap:4px}.teams .home,.teams .away{text-align:left}.teams .score{width:max-content}.score-row{grid-template-columns:1fr}.section-title h2{font-size:28px}}
+
+/* =========================================================
+   CLEAN TYPOGRAPHY OVERRIDE - Montserrat + Inter everywhere
+   ========================================================= */
+:root{
+  --font-text:'Inter', Arial, Helvetica, sans-serif;
+  --font-title:'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+html,
+body,
+main,
+section,
+article,
+header,
+footer,
+nav,
+div,
+span,
+p,
+a,
+button,
+input,
+select,
+textarea,
+label,
+small,
+table,
+thead,
+tbody,
+tr,
+th,
+td,
+li{
+  font-family:var(--font-text) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.club,
+.crest-mini,
+.section-title h2,
+.day-title,
+.match .time,
+.next-card .time,
+.rank,
+.final-card strong,
+.tabs a,
+.filters button,
+.primary,
+th,
+td.num,
+.teams,
+.time{
+  font-family:var(--font-title) !important;
+}
+
+h1 span{
+  font-family:var(--font-title) !important;
+  font-weight:900 !important;
+  color:#111 !important;
+  text-shadow:none !important;
+  -webkit-text-stroke:0 !important;
+  letter-spacing:-0.045em !important;
+}
+
+h1 small{
+  font-family:var(--font-title) !important;
+  font-weight:700 !important;
+  color:var(--teal) !important;
+  text-shadow:none !important;
+  -webkit-text-stroke:0 !important;
+}
+
+.club,
+.section-title h2,
+.day-title,
+.match .time,
+.next-card .time,
+.final-card strong,
+th{
+  font-weight:800 !important;
+}
+
+h3{
+  font-family:var(--font-title) !important;
+  font-weight:800 !important;
+  letter-spacing:-0.02em;
+}
+
+.match .time,
+.next-card .time{
+  font-size:28px;
+  line-height:1;
+}
+
+.day-title{
+  font-size:24px;
+  line-height:1.15;
+}
+
+table,
+th,
+td{
+  font-size:14px;
+}
+
+/* =========================================================
+   FINAL APP POLISH: clean fonts, UDV image and female table
+   ========================================================= */
+:root{
+  --font-text:'Inter', Arial, Helvetica, sans-serif;
+  --font-title:'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+html,body,main,section,article,header,footer,nav,div,span,p,a,button,input,select,textarea,label,small,table,thead,tbody,tr,th,td,li{
+  font-family:var(--font-text) !important;
+}
+
+h1,h2,h3,h4,h5,h6,.club,.section-title h2,.day-title,.match .time,.next-card .time,.rank,.final-card strong,.tabs a,.filters button,.primary,th,td.num,.teams,.time{
+  font-family:var(--font-title) !important;
+}
+
+.brand-logo{
+  width:clamp(135px, 22vw, 245px);
+  height:auto;
+  object-fit:contain;
+  flex:0 0 auto;
+  filter:drop-shadow(0 10px 22px rgba(0,0,0,.14));
+}
+
+.crest-mini{display:none !important;}
+
+.hero-top{
+  gap:24px;
+}
+
+h1 span{
+  color:#111 !important;
+  text-shadow:none !important;
+  -webkit-text-stroke:0 !important;
+  font-weight:900 !important;
+  letter-spacing:-0.045em !important;
+  font-size:clamp(44px, 9vw, 108px) !important;
+}
+
+h1 small{
+  color:var(--teal) !important;
+  font-weight:700 !important;
+  font-size:clamp(22px, 4vw, 48px) !important;
+  letter-spacing:0 !important;
+}
+
+.club,.section-title h2,.day-title,.match .time,.next-card .time,.final-card strong,th,h3{
+  font-weight:800 !important;
+}
+
+.standings-grid{
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+
+#standingsF .table-wrap{
+  border-color:rgba(53,111,112,.35);
+}
+
+#standingsF th{
+  background:linear-gradient(0deg,var(--teal2),var(--teal));
+}
+
+@media(max-width:720px){
+  .hero-top{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .brand-logo{
+    width:min(76vw, 300px);
+    align-self:center;
+    margin-bottom:2px;
+  }
+  h1 span{
+    font-size:clamp(38px, 15vw, 74px) !important;
+  }
+  h1 small{
+    font-size:clamp(20px, 8vw, 34px) !important;
+  }
+  .club{
+    font-size:clamp(16px, 5vw, 24px) !important;
+  }
+  main{padding:0 10px 70px;}
+  .panel{padding:16px;}
+  .match .time,.next-card .time{font-size:25px;}
+}
