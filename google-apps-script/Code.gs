@@ -465,8 +465,12 @@ function doPost(e) {
 function writeSheet_(ss, name, headers, rows) {
   let sh = ss.getSheetByName(name) || ss.insertSheet(name);
   sh.clearContents();
-  sh.getRange(1,1,1,headers.length).setValues([headers]);
-  if (rows.length) sh.getRange(2,1,rows.length,headers.length).setValues(rows);
+  sh.getRange(1,1,1,headers.length).setNumberFormat('@').setValues([headers]);
+  if (rows.length) {
+    const range = sh.getRange(2,1,rows.length,headers.length);
+    range.setNumberFormat('@');
+    range.setValues(rows);
+  }
   sh.setFrozenRows(1);
   sh.autoResizeColumns(1, headers.length);
 }
