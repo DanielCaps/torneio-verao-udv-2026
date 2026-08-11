@@ -474,7 +474,16 @@ function writeSheet_(ss, name, headers, rows) {
 function readObjects_(sh) {
   const values = sh.getDataRange().getValues();
   const headers = values.shift();
-  return values.filter(r => r.join('') !== '').map(r => Object.fromEntries(headers.map((h,i) => [h, r[i]])));
+  const tz = Session.getScriptTimeZone();
+  return values.filter(r => r.join('') !== '').map(r => Object.fromEntries(headers.map((h,i) => {
+    let v = r[i];
+    if (v instanceof Date) {
+      if (h === 'date') v = Utilities.formatDate(v, tz, 'yyyy-MM-dd');
+      else if (h === 'time') v = Utilities.formatDate(v, tz, 'HH:mm');
+      else v = Utilities.formatDate(v, tz, 'yyyy-MM-dd HH:mm');
+    }
+    return [h, v];
+  })));
 }
 
 function updateMatch_(sh, matchId, homeGoals, awayGoals) {
