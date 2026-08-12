@@ -436,16 +436,22 @@ function setupTournament() {
 }
 
 function doGet(e) {
-  const ss = SpreadsheetApp.getActive();
-  const data = {
-    teams: readObjects_(ss.getSheetByName(SHEETS.teams)),
-    matches: readObjects_(ss.getSheetByName(SHEETS.matches)),
-    scorers: readObjects_(ss.getSheetByName(SHEETS.scorers))
-  };
-  if (e && e.parameter && e.parameter.callback) {
-    return ContentService.createTextOutput(e.parameter.callback + '(' + JSON.stringify(data) + ')').setMimeType(ContentService.MimeType.JAVASCRIPT);
+  const cache = CacheService.getScriptCache();
+  let json = cache.get('udv-data');
+  if (!json) {
+    const ss = SpreadsheetApp.getActive();
+    const data = {
+      teams: readObjects_(ss.getSheetByName(SHEETS.teams)),
+      matches: readObjects_(ss.getSheetByName(SHEETS.matches)),
+      scorers: readObjects_(ss.getSheetByName(SHEETS.scorers))
+    };
+    json = JSON.stringify(data);
+    cache.put('udv-data', json, 25);
   }
-  return json_(data);
+  if (e && e.parameter && e.parameter.callback) {
+    return ContentService.createTextOutput(e.parameter.callback + '(' + json + ')').setMimeType(ContentService.MimeType.JAVASCRIPT);
+  }
+  return ContentService.createTextOutput(json).setMimeType(ContentService.MimeType.JSON);
 }
 
 function doPost(e) {
@@ -456,6 +462,7 @@ function doPost(e) {
     const ss = SpreadsheetApp.getActive();
     updateMatch_(ss.getSheetByName(SHEETS.matches), payload.matchId, payload.homeGoals, payload.awayGoals);
     replaceScorers_(ss.getSheetByName(SHEETS.scorers), payload.matchId, payload.scorers || []);
+    CacheService.getScriptCache().remove('udv-data');
     return json_({ok:true});
   } catch (err) {
     return json_({ok:false,error:String(err)});
