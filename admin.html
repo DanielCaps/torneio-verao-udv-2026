@@ -16,8 +16,9 @@
       <p class="hint">Se ainda n&atilde;o configuraste o Google Apps Script, os dados ficam apenas guardados neste dispositivo. Depois de configurares o backend, ficam p&uacute;blicos para todos.</p>
       <form id="adminForm">
         <label>Chave admin<input type="password" id="adminKey" placeholder="Chave privada" required/></label><label>Jogo<select id="matchSelect" required></select></label>
-        <div class="score-row"><label>Golos equipa casa<input type="number" id="homeGoals" min="0" required/></label><label>Golos equipa fora<input type="number" id="awayGoals" min="0" required/></label></div>
-        <label>Marcadores<br><small>Um por linha no formato: Jogador;Equipa;Golos</small><textarea id="scorersInput" placeholder="Ex.: Rui Silva;OS COXOS;2"></textarea></label>
+        <div class="score-row"><label>Golos <span id="homeTeamLabel">equipa casa</span><input type="number" id="homeGoals" min="0" required/></label><label>Golos <span id="awayTeamLabel">equipa fora</span><input type="number" id="awayGoals" min="0" required/></label></div>
+        <label>Marcadores <span id="homeScorersLabel">equipa casa</span><br><small>Um por linha no formato: Jogador;Golos</small><textarea id="scorersHome" placeholder="Ex.: Rui Silva;2"></textarea></label>
+        <label>Marcadores <span id="awayScorersLabel">equipa fora</span><br><small>Um por linha no formato: Jogador;Golos</small><textarea id="scorersAway" placeholder="Ex.: Jo&atilde;o Costa;1"></textarea></label>
         <button class="primary" type="submit">Guardar resultado</button>
       </form>
       <div id="adminStatus" class="status"></div>
